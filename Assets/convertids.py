@@ -17,6 +17,7 @@ if steam_id_from_local:
     except ValueError:
         print("Invalid Steam ID found locally.")
 steam_input = input("Enter Steam ID (with or without 'steam_' or full URL): ")
+if not steam_input: sys.exit()
 if "steamcommunity.com/profiles/" in steam_input:
     steam_input = steam_input.split("steamcommunity.com/profiles/")[1].split("/")[0]
 elif steam_input.startswith("steam_"):

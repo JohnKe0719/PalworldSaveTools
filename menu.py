@@ -28,7 +28,7 @@ def setup_environment():
     venv_python = os.path.join("venv", bin_dir, "python.exe" if os.name == "nt" else "python")
     sys.executable = venv_python
 def get_versions():
-    tools_version = "1.0.46"
+    tools_version = "1.0.50"
     game_version = "0.6.1"
     return tools_version, game_version
 columns = os.get_terminal_size().columns
@@ -90,12 +90,14 @@ def run_tool(choice):
         14: lambda: subprocess.run([sys.executable, os.path.join(assets_folder, "fix_host_save_manual.py")]),
         15: lambda: subprocess.run([sys.executable, os.path.join(assets_folder, "restore_map.py")]),
         16: lambda: subprocess.run([sys.executable, os.path.join(assets_folder, "delete_players_guilds.py")]),
-        17: lambda: subprocess.run([sys.executable, os.path.join(assets_folder, "paldefender_bases.py")]),
-        18: reset_update_tools,
-        19: about_tools,
-        20: usage_tools,
-        21: readme_tools,
-        22: sys.exit
+        #17: lambda: subprocess.run([sys.executable, os.path.join(assets_folder, "delete_bases.py")]),
+        17: lambda: print("Currently in testing phase..."),
+        18: lambda: subprocess.run([sys.executable, os.path.join(assets_folder, "paldefender_bases.py")]),
+        19: reset_update_tools,
+        20: about_tools,
+        21: usage_tools,
+        22: readme_tools,
+        23: sys.exit
     }
     tool_mapping.get(choice, lambda: print("Invalid choice!"))()
 def scan_save():
@@ -157,9 +159,9 @@ def usage_tools():
     print("Or raise an issue on my github: https://github.com/deafdudecomputers/PalworldSaveTools")
 def readme_tools():
     display_logo()
-    readme_path = Path("README.md")
+    readme_path = Path("readme.md")
     if readme_path.exists(): subprocess.run(["start", str(readme_path)], shell=True)
-    else: print(f"{RED_FONT}README.md not found.{RESET_FONT}")
+    else: print(f"{RED_FONT}readme.md not found.{RESET_FONT}")
 converting_tools = [
     "Convert Level.sav file to Level.json",
     "Convert Level.json file back to Level.sav",
@@ -181,6 +183,7 @@ management_tools = [
 ]
 cleaning_tools = [
     "Delete Players and Guilds",
+    "Delete Bases",
     "Generate PalDefender killnearestbase commands"
 ]
 pws_tools = [

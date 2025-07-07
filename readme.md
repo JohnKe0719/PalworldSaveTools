@@ -1,9 +1,10 @@
+```
   ___      _                _    _ ___              _____         _    
  | _ \__ _| |_ __ _____ _ _| |__| / __| __ ___ ____|_   _|__  ___| |___
  |  _/ _` | \ V  V / _ \ '_| / _` \__ \/ _` \ V / -_)| |/ _ \/ _ \ (_-<
  |_| \__,_|_|\_/\_/\___/_| |_\__,_|___/\__,_|\_/\___||_|\___/\___/_/__/
 
-
+```
 ---
 - **Contact me on Discord:** Pylar1991
 ---
@@ -20,11 +21,18 @@
   (*This ensures Python is accessible from the command line!*)  
   ![Add Python to PATH checkbox](https://i.imgur.com/SCJEkdJ.png)
 
-### 3. **Visual Studio Build Tools**
-- Download Visual Studio Build Tools here: [https://aka.ms/vs/17/release/vs_BuildTools.exe](https://aka.ms/vs/17/release/vs_BuildTools.exe)  
-- Run the installer and select the **"C++ build tools"** workload.
+### 3. **[Visual Studio Build Tools](https://aka.ms/vs/17/release/vs_BuildTools.exe)**
+- Download Visual Studio Build Tools.
+- During installation, **CHECK** the box that says:  
+  **"Desktop development with C++"** 🟩  
+  (*This allows the `cityhash` and `oozlib` library to install!*)  
+  ![CityHash Screenshot](https://i.imgur.com/RZGZ9So.png)
+  
+### 4. **[Git](https://gitforwindows.org/)**
+- Download and install Git.  
+(*This allows Git commands to be used by scripts and Python subprocesses!*)  
 
-### 4. ***Start Menu.cmd***
+### 5. ***Start Menu.cmd***
 
 ---
 
@@ -41,7 +49,7 @@
 - Provides a **base map view**.  
 - Provides automated killnearestbase commands for PalDefender targeting inactive bases.  
 - Transfers saves between dedicated servers and single/coop worlds.  
-- Fix Host Save via GUI editing.  
+- Fix Host Save via GUID editing.  
 - Includes Steam ID conversion.  
 - Includes coordinate conversion.  
 - Includes GamePass ⇔ Steam conversion.  
